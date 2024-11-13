@@ -1,9 +1,10 @@
 <script>
+import { Audiobook } from "@/models/Media.js";
 export default {
   name: "AudiobookItem",
   props: {
     item: {
-      type: Object,
+      type: Audiobook,
       required: true,
     }
   },
