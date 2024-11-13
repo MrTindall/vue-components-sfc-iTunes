@@ -1,8 +1,13 @@
 <script>
 import axios from "axios";
 import mediaFactory from "@/models/MediaFactory.js";
+import LibraryItemList from "./components/LibraryItemList.vue";
 
 export default {
+  name: "App",
+  components: {
+    LibraryItemList,
+  },
   data() {
     return {
       searchQuery: "",
