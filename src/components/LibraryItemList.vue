@@ -15,7 +15,8 @@ export default {
     return {
 
       // ask how I can add the results that are being passed to the LibraryCollection 
-      library: new LibraryCollection()
+      // library: new LibraryCollection()
+
 
 
     }
@@ -25,7 +26,7 @@ export default {
 
 <template>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3">
-    <div class="col" v-for="item in library" :key="item">
+    <div class="col" v-for="item in this.library" :key="item">
       <library-item :item="item"
                     @delete-item="library.removeItem(item)"
                     :remove-function="item => library.removeItem(item)"/>
