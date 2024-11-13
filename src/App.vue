@@ -16,13 +16,13 @@
       </form>
 
       <div class="row mt-4">
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6" v-for="(media, index) in results" :key="index">
+        <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6" v-for="(media, index) in results" :key="index">
           <component :is="media.component" :item="media.props.item" />
-        </div>
+        </div> -->
       </div>
-      <!-- <div class="container-fluid mt-3">
+      <div class="container-fluid mt-3">
         <library-item-list ></library-item-list>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>

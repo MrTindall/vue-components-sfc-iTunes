@@ -1,30 +1,35 @@
+<script>
+import LibraryItem from "@/components/LibraryItem.vue";
+import LibraryCollection from "@/models/LibraryCollection.js";
+import {Book, Movie, Audiobook, Podcast} from "@/models/Media.js";
+
+export default {
+  name: "LibraryItemList",
+  components: {LibraryItem},
+  // this function is run AFTER the props have been passed in
+  data() {
+    return {
+      library: new LibraryCollection()
+          .addItem(new Book('Ember in the Ashes', 462))
+          .addItem(new Movie('Strange Brew', 90))
+          .addItem({name: 'Tyler'})
+      // same as
+      //library: library
+    }
+  },
+}
+</script>
+
 <template>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3">
-    <div class="col" v-for="(item, index) in library" :key="index">
-      <library-item 
-        :item="item" 
-        @delete-item="removeItem(item)" 
-        :remove-function="removeItem" />
+    <div class="col" v-for="item in library" :key="item">
+      <library-item :item="item"
+                    @delete-item="library.removeItem(item)"
+                    :remove-function="item => library.removeItem(item)"/>
     </div>
   </div>
 </template>
 
-<script>
-import LibraryItem from "@/components/LibraryItem.vue";
+<style scoped>
 
-export default {
-  name: "LibraryItemList",
-  components: { LibraryItem },
-  props: {
-    library: {
-      type: Array,
-      required: true,
-    }
-  },
-  methods: {
-    removeItem(item) {
-      this.$emit("delete-item", item);
-    }
-  }
-};
-</script>
+</style>
