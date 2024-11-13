@@ -2,7 +2,7 @@ import SongItem from "@/components/SongItem.vue";
 import MovieItem from "@/components/MovieItem.vue";
 import PodcastItem from "@/components/PodcastItem.vue";
 import AudiobookItem from "@/components/AudiobookItem.vue";
-import BookItem from "@/components/BookItem.vue";
+import BookItem from "@/components/BookItem.vue"
 
 export default function mediaFactory(item) {
   switch (item.kind) {

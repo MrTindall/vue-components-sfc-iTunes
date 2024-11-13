@@ -1,7 +1,8 @@
 <script>
 import axios from "axios";
-import mediaFactory from "@/models/MediaFactory.js";
 import LibraryItemList from "./components/LibraryItemList.vue";
+import LibraryCollectionFactory from "./models/LibraryCollectionbsFactory";
+import LibraryCollection from "./models/LibraryCollection";
 
 export default {
   name: "App",
@@ -15,28 +16,31 @@ export default {
     };
   },
 
+
   methods: {
     async searchMedia() {
-      if (this.searchQuery.trim() === "") return;
+      if (this.searchQuery.trim() !== "") {
 
-      try {
-        const response = await axios.get("https://itunes.apple.com/search", {
-          params: {
-            term: this.searchQuery,
-            media: "all",
-            limit: 20
-          }
-        });
+        let url = "https://itunes.apple.com/search";
+        let params = {
+          term: this.searchQuery,
+          media: 'music',
+          limit: 20
+        };
+        
+        this.results = new LibraryCollection()
 
-        this.results = response.data.results.map(item => {
-          console.log(item)
-          // return mediaFactory(item);
-          const { component, props } = mediaFactory(item);
-          // console.log({ component, props })
-          return { component, props };
-        });
-      } catch (error) {
-        console.error("Error fetching data from iTunes API:", error);
+        axios.get(url, {params})
+          .then(response => {
+            this.results = new LibraryCollectionFactory().createFromItunes(response.data.results);
+            console.log(results)
+          })
+          .catch(error => {
+            console.error("Error fetching data from iTunes API:", error);
+          })
+          .finally(() => {
+            console.log('')
+          });
       }
     }
   }
