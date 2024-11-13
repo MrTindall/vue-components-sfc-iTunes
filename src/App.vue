@@ -65,23 +65,10 @@ export default {
         </div>
       </form>
 
-      <!-- <div class="row mt-4">
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-
-        </div>
-      </div> -->
       <div class="container-fluid mt-3">
         <library-item-list :collection="this.mediaResults"></library-item-list>
-
-        <!-- <div v-for="item in results" :key="item">
-          <div class="row mt-4 card">
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6" style="height: 200px;">
-              {{ item }}
-            </div>
-          </div>
-        </div> -->
-
       </div>
+      
     </div>
   </div>
 </template>
