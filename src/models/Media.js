@@ -16,9 +16,9 @@ class Book {
 }
 
 class Movie {
-    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = ArtistName ?? 'Unknown Artist';
+        this.Artist = artistName ?? 'Unknown Artist';
         this.isAvailable = true;
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.genres = genres ?? 'Unknown Genre';
@@ -28,9 +28,9 @@ class Movie {
 }
 
 class Audiobook {
-    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = ArtistName ?? 'Unknown Artist';
+        this.Artist = artistName ?? 'Unknown Artist';
         this.isAvailable = true;
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.genres = genres ?? 'Unknown Genre';
@@ -40,9 +40,9 @@ class Audiobook {
 }
 
 class Podcast {
-    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = ArtistName ?? 'Unknown Artist';
+        this.Artist = artistName ?? 'Unknown Artist';
         this.isAvailable = true;
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.genres = genres ?? 'Unknown Genre';
@@ -52,9 +52,9 @@ class Podcast {
 }
 
 class Song {
-    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = ArtistName ?? 'Unknown Artist';
+        this.Artist = artistName ?? 'Unknown Artist';
         this.isAvailable = true;
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.genres = genres ?? 'Unknown Genre';
