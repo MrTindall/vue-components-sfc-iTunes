@@ -28,10 +28,11 @@ export default {
           limit: 20
         };
         
-        this.results = new LibraryCollection()
+        // this.results = new LibraryCollection()
 
         axios.get(url, {params})
           .then(response => {
+            console.log(response.data.results)
             this.results = new LibraryCollectionFactory().createFromItunes(response.data.results);
             console.log(results)
           })

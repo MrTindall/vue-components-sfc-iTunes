@@ -4,7 +4,7 @@ import { Book, Movie, Audiobook, Podcast, Song } from '@/models/Media.js'
 export default class LibraryCollectionFactory {
     static createFromItunes(items) {
 
-        const collection = new LibraryCollection();
+        let collection = new LibraryCollection();
         let newItem;
 
         items.forEach(item => {
