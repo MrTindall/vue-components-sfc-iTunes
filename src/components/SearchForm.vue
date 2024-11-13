@@ -15,13 +15,13 @@
 export default {
   data() {
     return {
-      query: ""  // Holds the user input
+      query: ""
     };
   },
   methods: {
     searchMedia() {
       if (this.query.trim()) {
-        this.$emit("search", this.query);  // Emit the search query to the parent
+        this.$emit("search", this.query);
       }
     }
   }

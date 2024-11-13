@@ -28,6 +28,6 @@ export default {
 
 <style scoped>
 .song-item {
-  color: #1DB954;  /* Example color for song items */
+  color: #1DB954;
 }
 </style>

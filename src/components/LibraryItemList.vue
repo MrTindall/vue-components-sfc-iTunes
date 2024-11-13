@@ -1,6 +1,5 @@
 <template>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3">
-    <!-- Loop over the 'library' prop and display each item -->
     <div class="col" v-for="(item, index) in library" :key="index">
       <library-item 
         :item="item" 
@@ -19,12 +18,11 @@ export default {
   props: {
     library: {
       type: Array,
-      required: true,  // Accepts the array of results from the parent
+      required: true,
     }
   },
   methods: {
     removeItem(item) {
-      // Implement any custom logic for removing items (if needed)
       this.$emit("delete-item", item);
     }
   }

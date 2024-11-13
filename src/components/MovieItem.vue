@@ -28,6 +28,6 @@ export default {
 
 <style scoped>
 .movie-item {
-  color: #ff8300;  /* Example color for movie items */
+  color: #ff8300;
 }
 </style>

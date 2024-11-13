@@ -5,7 +5,6 @@
       <component :is="item.component" :item="item.props.item" />
     </div>
     <div class="card-footer d-flex justify-content-between">
-      <!-- Conditionally render additional information -->
       <div>
         <p v-if="item.props.author">Author: {{ item.props.author }}</p>
         <p v-if="item.props.director">Director: {{ item.props.director }}</p>
