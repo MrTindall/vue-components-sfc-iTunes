@@ -5,10 +5,11 @@ export default class LibraryCollectionsFactory {
     static createFromItunes(items) {
 
         let collection = new LibraryCollection();
-        let newItem = false;
+        
 
         items.forEach(item => {
-            switch (item.kind.toLowerCase()) {
+            let newItem = false;
+            switch (item.kind?.toLowerCase()) {
                 case "song":
                     newItem = new Song(item.trackName, item.artistName, item.artworkUrl60, item.genres, item.trackTimeMillis);
                     break;

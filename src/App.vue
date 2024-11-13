@@ -33,13 +33,13 @@ export default {
         axios.get(url, {params})
           .then(response => {
             console.log(response.data.results)
-            this.mediaResults = new LibraryCollectionsFactory().createFromItunes(response.data.results);
+            this.mediaResults = new LibraryCollectionsFactory.createFromItunes(response.data.results);
             console.log(results)
           })
           .catch(error => {
             console.error("Error fetching data from iTunes API:", error);
           })
-          .finally(() => {
+          .finally(onfinally => {
             console.log('')
           });
       }
