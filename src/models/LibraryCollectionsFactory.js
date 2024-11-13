@@ -3,13 +3,12 @@ import { Book, Movie, Audiobook, Podcast, Song } from '@/models/Media.js'
 
 export default class LibraryCollectionsFactory {
     static createFromItunes(items) {
-
-        let collection = new LibraryCollection();
+        const collection = new LibraryCollection();
         
 
         items.forEach(item => {
             let newItem = false;
-            switch (item.kind?.toLowerCase()) {
+            switch (item.kind?.toLowerCase() ?? '') {
                 case "song":
                     newItem = new Song(item.trackName, item.artistName, item.artworkUrl60, item.genres, item.trackTimeMillis);
                     break;
@@ -31,10 +30,9 @@ export default class LibraryCollectionsFactory {
             }
 
             if (newItem) {
-                collection.add(newItem);
+                collection.addItem(newItem);
             }
         });
-
         return collection;
     }
 }

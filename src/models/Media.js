@@ -5,14 +5,6 @@ class Book {
         this.author = author;
         this.isAvailable = true;
     }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
-        this.isAvailable = true;
-    }
 }
 
 class Movie {
@@ -23,14 +15,6 @@ class Movie {
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.genres = genres ?? 'Unknown Genre';
         this.trackTimeMillis = trackTimeMillis ?? 0;
-        this.isAvailable = true;
-    }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
         this.isAvailable = true;
     }
 }
@@ -45,14 +29,6 @@ class Audiobook {
         this.trackTimeMillis = trackTimeMillis ?? 0;
         this.isAvailable = true;
     }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
-        this.isAvailable = true;
-    }
 }
 
 class Podcast {
@@ -65,14 +41,6 @@ class Podcast {
         this.trackTimeMillis = trackTimeMillis ?? 0;
         this.isAvailable = true;
     }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
-        this.isAvailable = true;
-    }
 }
 
 class Song {
@@ -83,14 +51,6 @@ class Song {
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.genres = genres ?? 'Unknown Genre';
         this.trackTimeMillis = trackTimeMillis ?? 0;
-        this.isAvailable = true;
-    }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
         this.isAvailable = true;
     }
 }
