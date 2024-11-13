@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       searchQuery: "",
-      mediaResults: []
+      mediaResults: new LibraryCollection()
     };
   },
 
@@ -28,7 +28,7 @@ export default {
           limit: 20
         };
         
-        // this.results = new LibraryCollection()
+        this.results = new LibraryCollection()
 
         axios.get(url, {params})
           .then(response => {
@@ -71,7 +71,7 @@ export default {
         </div>
       </div> -->
       <div class="container-fluid mt-3">
-        <library-item-list :collection="mediaResults"></library-item-list>
+        <library-item-list :collection="this.mediaResults"></library-item-list>
 
         <!-- <div v-for="item in results" :key="item">
           <div class="row mt-4 card">

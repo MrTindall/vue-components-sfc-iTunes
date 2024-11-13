@@ -5,7 +5,6 @@ export default class LibraryCollectionsFactory {
     static createFromItunes(items) {
         const collection = new LibraryCollection();
         
-
         items.forEach(item => {
             let newItem = false;
             switch (item.kind?.toLowerCase() ?? '') {
