@@ -11,11 +11,13 @@ export default function mediaFactory(item) {
         component: SongItem,
         props: {
           item,
-          imageUrl: item.artworkUrl100 || '',  
-          title: item.trackName,               
-          artist: item.artistName || 'Unknown', 
-          album: item.collectionName || 'N/A', 
-          price: item.collectionPrice || 'N/A' 
+          imageUrl: item.artworkUrl60 || '',
+          title: item.trackName || 'Unknown Song',
+          artist: item.Artist || 'Unknown Artist',
+          genre: item.genres || 'Unknown Genre',
+          runtime: item.trackTimeMillis
+            ? `${(item.trackTimeMillis / 60000).toFixed(0)} mins`
+            : 'N/A'
         }
       };
     case "movie":
@@ -23,10 +25,13 @@ export default function mediaFactory(item) {
         component: MovieItem,
         props: {
           item,
-          imageUrl: item.artworkUrl60 || '',  
-          title: item.trackName,               
-          director: item.artistName || 'N/A',  
-          runtime: item.trackTimeMillis ? (item.trackTimeMillis / 60000).toFixed(0) : 'N/A' 
+          imageUrl: item.artworkUrl60 || '',
+          title: item.trackName || 'Unknown Title',
+          director: item.Artist || 'Unknown Director',
+          genre: item.genres || 'Unknown Genre',
+          runtime: item.trackTimeMillis
+            ? `${(item.trackTimeMillis / 60000).toFixed(0)} mins`
+            : 'N/A'
         }
       };
     case "podcast":
@@ -34,10 +39,13 @@ export default function mediaFactory(item) {
         component: PodcastItem,
         props: {
           item,
-          imageUrl: item.artworkUrl60 || '',  
-          title: item.trackName,              
-          author: item.artistName || 'N/A',   
-          episodes: item.trackCount || 'N/A'   
+          imageUrl: item.artworkUrl60 || '',
+          title: item.trackName || 'Unknown Title',
+          author: item.Artist || 'Unknown Author',
+          genre: item.genres || 'Unknown Genre',
+          runtime: item.trackTimeMillis
+            ? `${(item.trackTimeMillis / 60000).toFixed(0)} mins`
+            : 'N/A'
         }
       };
     case "audiobook":
@@ -45,10 +53,13 @@ export default function mediaFactory(item) {
         component: AudiobookItem,
         props: {
           item,
-          imageUrl: item.artworkUrl60 || '',  
-          title: item.trackName,               
-          author: item.artistName || 'N/A',   
-          runtime: item.trackTimeMillis ? (item.trackTimeMillis / 60000).toFixed(0) : 'N/A' 
+          imageUrl: item.artworkUrl60 || '',
+          title: item.trackName || 'Unknown Title',
+          author: item.Artist || 'Unknown Author',
+          genre: item.genres || 'Unknown Genre',
+          runtime: item.trackTimeMillis
+            ? `${(item.trackTimeMillis / 60000).toFixed(0)} mins`
+            : 'N/A'
         }
       };
     case "book":
@@ -56,15 +67,15 @@ export default function mediaFactory(item) {
         component: BookItem,
         props: {
           item,
-          imageUrl: item.artworkUrl60 || '',  
-          title: item.trackName,               
-          author: item.artistName || 'N/A',   
-          pages: item.trackTimeMillis || 'N/A' 
+          title: item.title || 'Unknown Book',
+          author: item.author || 'Unknown Author',
+          pages: item.pages || 'N/A',
+          availability: item.isAvailable ? 'Available' : 'Checked Out'
         }
       };
     default:
       return {
-        component: SongItem,  
+        component: SongItem,
         props: { item }
       };
   }

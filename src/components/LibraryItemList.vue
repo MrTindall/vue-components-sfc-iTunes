@@ -10,11 +10,7 @@ export default {
   data() {
     return {
       library: new LibraryCollection()
-          .addItem(new Book('Ember in the Ashes', 462))
-          .addItem(new Movie('Strange Brew', 90))
-          .addItem({name: 'Tyler'})
-      // same as
-      //library: library
+
     }
   },
 }

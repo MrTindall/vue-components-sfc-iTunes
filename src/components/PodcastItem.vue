@@ -1,9 +1,10 @@
 <script>
+import { Podcast } from '@/models/Media';
 export default {
   name: "PodcastItem",
   props: {
     item: {
-      type: Object,
+      type: Podcast,
       required: true,
     }
   },
@@ -12,9 +13,11 @@ export default {
 
 <template>
   <div class="podcast">
-    <h3 class="card-title">{{ item.collectionName }}</h3>
-    <p v-if="item.artistName">By: {{ item.artistName }}</p>
-    <p v-if="item.collectionPrice">Price: ${{ item.collectionPrice }}</p>
+    <h3 class="card-title">{{ item.title }}</h3>
+    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
+    <p v-if="item.genre">Genre: {{ item.genre }}</p>
+    <p v-if="item.author">Author: {{ item.director }}</p>
+    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
   </div>
 </template>
 

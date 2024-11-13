@@ -3,10 +3,11 @@ import BookItem from "@/components/BookItem.vue";
 import MovieItem from "@/components/MovieItem.vue";
 import PodcastItem from "./PodcastItem.vue";
 import AudiobookItem from "./AudiobookItem.vue";
+import { Song } from "@/models/Media";
 
 export default {
   name: "LibraryItem",
-  components: {MovieItem, BookItem, PodcastItem, AudiobookItem},
+  components: {MovieItem, BookItem, PodcastItem, AudiobookItem, Song},
   props: {
     item: {
       type: Object,

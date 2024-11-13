@@ -16,54 +16,50 @@ class Book {
 }
 
 class Movie {
-    constructor(title = 'Unknown Movie', runtime = 0, director = 'Unknown Director') {
-        this.title = title;
-        this.runtime = runtime;
-        this.director = director;
+    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+        this.trackName = trackName ?? 'Unknown Song';
+        this.Artist = ArtistName ?? 'Unknown Artist';
         this.isAvailable = true;
-    }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
+        this.artworkUrl60 = artworkUrl60 ?? '';
+        this.genres = genres ?? 'Unknown Genre';
+        this.trackTimeMillis = trackTimeMillis ?? 0;
         this.isAvailable = true;
     }
 }
 
 class Audiobook {
-    constructor(title = 'Unknown Audiobook', duration = 0, narrator = 'Unknown Narrator') {
-        this.title = title;
-        this.duration = duration;
-        this.narrator = narrator;
+    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+        this.trackName = trackName ?? 'Unknown Song';
+        this.Artist = ArtistName ?? 'Unknown Artist';
         this.isAvailable = true;
-    }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
+        this.artworkUrl60 = artworkUrl60 ?? '';
+        this.genres = genres ?? 'Unknown Genre';
+        this.trackTimeMillis = trackTimeMillis ?? 0;
         this.isAvailable = true;
     }
 }
 
 class Podcast {
-    constructor(title = 'Unknown Podcast', episodes = 0, host = 'Unknown Host') {
-        this.title = title;
-        this.episodes = episodes;
-        this.host = host;
+    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+        this.trackName = trackName ?? 'Unknown Song';
+        this.Artist = ArtistName ?? 'Unknown Artist';
         this.isAvailable = true;
-    }
-
-    checkOut() {
-        this.isAvailable = false;
-    }
-
-    checkIn() {
+        this.artworkUrl60 = artworkUrl60 ?? '';
+        this.genres = genres ?? 'Unknown Genre';
+        this.trackTimeMillis = trackTimeMillis ?? 0;
         this.isAvailable = true;
     }
 }
 
-export { Book, Movie, Audiobook, Podcast };
+class Song {
+    constructor(trackName, ArtistName, artworkUrl60, genres, trackTimeMillis) {
+        this.trackName = trackName ?? 'Unknown Song';
+        this.Artist = ArtistName ?? 'Unknown Artist';
+        this.isAvailable = true;
+        this.artworkUrl60 = artworkUrl60 ?? '';
+        this.genres = genres ?? 'Unknown Genre';
+        this.trackTimeMillis = trackTimeMillis ?? 0;
+        this.isAvailable = true;
+    }
+}
+export { Book, Movie, Audiobook, Podcast, Song };

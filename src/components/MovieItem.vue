@@ -1,33 +1,34 @@
-<template>
-  <div class="movie-item">
-    <h3 class="card-title">{{ item.trackName }}</h3>
-    <p v-if="director">Director: {{ director }}</p>
-    <p v-if="runtime">Runtime: {{ runtime }} min</p>
-  </div>
-</template>
-
 <script>
+import { Movie } from "@/models/Media.js";
+
 export default {
   name: "MovieItem",
   props: {
     item: {
-      type: Object,
-      required: true
+      type: Movie,
+      required: true,
     }
   },
-  computed: {
-    director() {
-      return this.item.artistName || 'N/A';
-    },
-    runtime() {
-      return this.item.collectionTime ? (this.item.collectionTime / 60).toFixed(0) : 'N/A';
-    }
-  }
-};
+}
 </script>
 
-<style scoped>
-.movie-item {
-  color: #ff8300;
+<template>
+  <div class="movie">
+    <h3 class="card-title">{{ item.title }}</h3>
+    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
+    <p v-if="item.genre">Genre: {{ item.genre }}</p>
+    <p v-if="item.director">Director: {{ item.director }}</p>
+    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
+  </div>
+</template>
+
+<style scoped lang="scss">
+@import '@/scss/variables';
+@import 'bootstrap/scss/variables';
+$orange: #ff8300;
+
+.card-title {
+  font-weight: bold;
+  color: $orange;
 }
 </style>
