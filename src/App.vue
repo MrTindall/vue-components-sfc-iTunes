@@ -40,7 +40,7 @@ export default {
             console.error("Error fetching data from iTunes API:", error);
           })
           .finally(onfinally => {
-            console.log('')
+            console.log('Done')
           });
       }
     }

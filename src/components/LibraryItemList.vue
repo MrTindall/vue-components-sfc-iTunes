@@ -13,8 +13,7 @@ export default {
   // this function is run AFTER the props have been passed in
   data() {
     return {
-      // ask how I can add the results that are being passed to the LibraryCollection 
-      // library: new LibraryCollection()
+
     }
   },
 }
