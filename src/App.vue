@@ -30,7 +30,9 @@ export default {
 
         this.results = response.data.results.map(item => {
           console.log(item)
+          // return mediaFactory(item);
           const { component, props } = mediaFactory(item);
+          // console.log({ component, props })
           return { component, props };
         });
       } catch (error) {
@@ -58,13 +60,13 @@ export default {
         </div>
       </form>
 
-      <div class="row mt-4">
-        <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6" v-for="(media, index) in results" :key="index">
-          <component :is="media.component" :item="media.props.item" />
-        </div> -->
-      </div>
+      <!-- <div class="row mt-4">
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+
+        </div>
+      </div> -->
       <div class="container-fluid mt-3">
-        <library-item-list></library-item-list>
+        <library-item-list :library="results"></library-item-list>
       </div>
     </div>
   </div>

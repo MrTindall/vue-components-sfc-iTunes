@@ -1,15 +1,20 @@
 <script>
-import LibraryItem from "@/components/LibraryItem.vue";
+import LibraryItem from "@/models/LibraryItem";
 import LibraryCollection from "@/models/LibraryCollection.js";
 import {Book, Movie, Audiobook, Podcast} from "@/models/Media.js";
 
 export default {
   name: "LibraryItemList",
   components: {LibraryItem},
+
+  props: {
+    library: Array
+  },
   // this function is run AFTER the props have been passed in
   data() {
     return {
       library: new LibraryCollection()
+      
 
     }
   },
