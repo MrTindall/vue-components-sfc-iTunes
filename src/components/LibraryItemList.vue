@@ -8,7 +8,7 @@ export default {
   components: {LibraryItem},
 
   props: {
-    library: Array
+    collection: { type: LibraryCollection }
   },
   // this function is run AFTER the props have been passed in
   data() {
@@ -26,7 +26,7 @@ export default {
 
 <template>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3">
-    <div class="col" v-for="item in this.library" :key="item">
+    <div class="col" v-for="item in this.collection" :key="item">
       <library-item :item="item"
                     @delete-item="library.removeItem(item)"
                     :remove-function="item => library.removeItem(item)"/>

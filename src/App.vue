@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       searchQuery: "",
-      results: []
+      mediaResults: []
     };
   },
 
@@ -33,7 +33,7 @@ export default {
         axios.get(url, {params})
           .then(response => {
             console.log(response.data.results)
-            this.results = new LibraryCollectionsFactory().createFromItunes(response.data.results);
+            this.mediaResults = new LibraryCollectionsFactory().createFromItunes(response.data.results);
             console.log(results)
           })
           .catch(error => {
@@ -71,7 +71,7 @@ export default {
         </div>
       </div> -->
       <div class="container-fluid mt-3">
-        <library-item-list :library="results"></library-item-list>
+        <library-item-list :collection="mediaResults"></library-item-list>
 
         <!-- <div v-for="item in results" :key="item">
           <div class="row mt-4 card">
