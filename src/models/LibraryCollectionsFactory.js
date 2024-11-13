@@ -1,7 +1,7 @@
 import LibraryCollection from "./LibraryCollection";
 import { Book, Movie, Audiobook, Podcast, Song } from '@/models/Media.js'
 
-export default class LibraryCollectionFactory {
+export default class LibraryCollectionsFactory {
     static createFromItunes(items) {
 
         let collection = new LibraryCollection();

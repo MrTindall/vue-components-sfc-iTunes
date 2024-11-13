@@ -1,7 +1,7 @@
 <script>
 import axios from "axios";
 import LibraryItemList from "./components/LibraryItemList.vue";
-import LibraryCollectionFactory from "./models/LibraryCollectionbsFactory";
+import LibraryCollectionsFactory from "./models/LibraryCollectionsFactory";
 import LibraryCollection from "./models/LibraryCollection";
 
 export default {
@@ -33,7 +33,7 @@ export default {
         axios.get(url, {params})
           .then(response => {
             console.log(response.data.results)
-            this.results = new LibraryCollectionFactory().createFromItunes(response.data.results);
+            this.results = new LibraryCollectionsFactory().createFromItunes(response.data.results);
             console.log(results)
           })
           .catch(error => {
