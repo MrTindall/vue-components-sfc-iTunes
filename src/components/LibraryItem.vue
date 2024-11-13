@@ -23,7 +23,7 @@ export default {
 <template>
   <div class="card h-100" >
     <div class="card-body">
-      <component :is="item.constructor.type" :item="item" />
+      <component :is="item.constructor.type + 'Item'" :item="item" />
     </div>
     <div class="card-footer d-flex justify-content-end">
       <button @click="$emit('delete-item')">Delete w/ Emit</button>
