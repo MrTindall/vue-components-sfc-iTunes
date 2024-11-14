@@ -9,19 +9,19 @@ export default class LibraryCollectionsFactory {
             let newItem = false;
             switch (item.kind?.toLowerCase() || item.wrapperType.toLowerCase()) {
                 case "song":
-                    newItem = new Song(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
+                    newItem = new Song(item.trackId, item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
                     break;
                 case "podcast":
-                    newItem = new Podcast(item.collectionName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
+                    newItem = new Podcast(item.trackId, item.collectionName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
                     break;
                 case "audiobook":
-                    newItem = new Audiobook(item.collectionName, item.artistName, item.artworkUrl60, item.description);
+                    newItem = new Audiobook(item.trackId, item.collectionName, item.artistName, item.artworkUrl60, item.description);
                     break;
                 case "feature-movie":
-                    newItem = new Movie(item.collectionName, item.artistName, item.artworkUrl60, item.longDescription, item.trackTimeMillis);
+                    newItem = new Movie(item.trackId, item.collectionName, item.artistName, item.artworkUrl60, item.longDescription, item.trackTimeMillis);
                     break;
                 case "book":
-                    newItem = new Book(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
+                    newItem = new Book(item.trackId, item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
                     break;
 
                 default:

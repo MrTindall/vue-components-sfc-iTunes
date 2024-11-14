@@ -9,7 +9,8 @@ class Book {
 
 class Movie {
     static type = 'Movie';
-    constructor(collectionName, artistName, artworkUrl60, longDescription, trackTimeMillis) {
+    constructor(trackId, collectionName, artistName, artworkUrl60, longDescription, trackTimeMillis) {
+        this.trackId = trackId;
         this.collectionName = collectionName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
@@ -20,7 +21,8 @@ class Movie {
 
 class Audiobook {
     static type = 'Audiobook';
-    constructor(collectionName, artistName, artworkUrl60, description) {
+    constructor(trackId, collectionName, artistName, artworkUrl60, description) {
+        this.trackId = trackId;
         this.collectionName = collectionName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
@@ -30,7 +32,8 @@ class Audiobook {
 
 class Podcast {
     static type = 'Podcast';
-    constructor(collectionName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
+    constructor(trackId, collectionName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
+        this.trackId = trackId;
         this.collectionName = collectionName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
@@ -41,7 +44,8 @@ class Podcast {
 
 class Song {
     static type = 'Song';
-    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
+    constructor(trackId, trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
+        this.trackId = trackId;
         this.trackName = trackName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
