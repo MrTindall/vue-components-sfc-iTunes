@@ -1,4 +1,5 @@
 class Book {
+    static type = 'Book';
     constructor(title = 'Unknown Book', pages = 0, author = 'Unknown Author') {
         this.title = title;
         this.pages = pages;
@@ -7,41 +8,45 @@ class Book {
 }
 
 class Movie {
-    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
+    static type = 'Movie';
+    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = artistName ?? 'Unknown Artist';
+        this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.genres = genres ?? 'Unknown Genre';
+        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
         this.trackTimeMillis = trackTimeMillis ?? 0;
     }
 }
 
 class Audiobook {
-    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
+    static type = 'Audiobook';
+    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = artistName ?? 'Unknown Artist';
+        this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.genres = genres ?? 'Unknown Genre';
+        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
         this.trackTimeMillis = trackTimeMillis ?? 0;
     }
 }
 
 class Podcast {
-    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
+    static type = 'Podcast';
+    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = artistName ?? 'Unknown Artist';
+        this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.genres = genres ?? 'Unknown Genre';
+        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
         this.trackTimeMillis = trackTimeMillis ?? 0;
     }
 }
 
 class Song {
-    constructor(trackName, artistName, artworkUrl60, genres, trackTimeMillis) {
+    static type = 'Song';
+    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
         this.trackName = trackName ?? 'Unknown Song';
-        this.Artist = artistName ?? 'Unknown Artist';
+        this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.genres = genres ?? 'Unknown Genre';
+        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
         this.trackTimeMillis = trackTimeMillis ?? 0;
     }
 }

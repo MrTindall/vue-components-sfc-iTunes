@@ -66,7 +66,7 @@ export default {
       </form>
 
       <div class="container-fluid mt-3">
-        <library-item-list :collection="this.mediaResults"></library-item-list>
+        <library-item-list :collection="mediaResults"></library-item-list>
       </div>
       
     </div>

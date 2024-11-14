@@ -1,5 +1,5 @@
 <script>
-import LibraryItem from "@/models/LibraryItem";
+import LibraryItem from "@/components/LibraryItem.vue";
 import LibraryCollection from "@/models/LibraryCollection.js";
 import {Book, Movie, Audiobook, Podcast} from "@/models/Media.js";
 
@@ -21,7 +21,7 @@ export default {
 
 <template>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3">
-    <div class="col" v-for="item in this.collection" :key="item">
+    <div class="col" v-for="item in collection" :key="item">
       <library-item :item="item"
                     @delete-item="library.removeItem(item)"
                     :remove-function="item => library.removeItem(item)"/>
