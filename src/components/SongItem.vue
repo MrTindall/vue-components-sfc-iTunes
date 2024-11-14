@@ -16,11 +16,20 @@ export default {
 
 <template>
 
-  <div>
-    <h5 class="card-title">{{ item.trackName }}</h5>
-    <p v-if="item.trackTimeMillis">Runtime: {{ item.trackTimeMillis }}</p>
-    <p v-if="item.primaryGenreName">Genre: {{ item.primaryGenreName }}</p>
-    <p v-if="item.artistName">Aritist: {{ item.artistName }}</p>
+  <div class="card">
+    <img v-if="item.artworkUrl60" :src="item.artworkUrl60" class="card-img-top" alt="Artwork" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.trackName }}</h5>
+      <p v-if="item.trackTimeMillis" class="card-text">
+        <strong>Runtime:</strong> {{ item.trackTimeMillis }}
+      </p>
+      <p v-if="item.primaryGenreName" class="card-text">
+        <strong>Genre:</strong> {{ item.primaryGenreName }}
+      </p>
+      <p v-if="item.artistName" class="card-text">
+        <strong>Artist:</strong> {{ item.artistName }}
+      </p>
+    </div>
   </div>
 </template>
 
