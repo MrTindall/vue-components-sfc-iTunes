@@ -12,19 +12,23 @@ export default {
 </script>
 
 <template>
-  <div class="podcast">
-    <h3 class="card-title">{{ item.title }}</h3>
-    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
-    <p v-if="item.genre">Genre: {{ item.genre }}</p>
-    <p v-if="item.author">Author: {{ item.director }}</p>
-    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
+  <div class="card" style="overflow-y: scroll; height: 600px;">
+    <img v-if="item.artworkUrl60" :src="item.artworkUrl60" class="card-img-top" alt="Artwork" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.collectionName }}</h5>
+      <p v-if="item.artistName" class="card-text">
+        <strong>Host:</strong> {{ item.artistName }}
+      </p>
+      <p v-if="item.primaryGenreName" class="card-text">
+        <strong>Genre:</strong> {{ item.primaryGenreName }}
+      </p>
+      <p v-if="item.trackTimeMillis" class="card-text">
+        <strong>Runtime:</strong> {{ item.trackTimeMillis }} minutes
+      </p>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-  $purple: #800080;
-  .card-title {
-    font-weight: bold;
-    color: $purple;
-  }
+
 </style>

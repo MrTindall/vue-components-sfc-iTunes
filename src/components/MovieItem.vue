@@ -13,12 +13,20 @@ export default {
 </script>
 
 <template>
-  <div class="movie">
-    <h3 class="card-title">{{ item.title }}</h3>
-    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
-    <p v-if="item.genre">Genre: {{ item.genre }}</p>
-    <p v-if="item.director">Director: {{ item.director }}</p>
-    <p v-if="item.runtime">Runtime: {{ item.runtime }}</p>
+  <div class="card" style="overflow-y: scroll; height: 600px;">
+    <img v-if="item.artworkUrl60" :src="item.artworkUrl60" class="card-img-top" alt="Artwork" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.collectionName }}</h5>
+      <p v-if="item.artistName" class="card-text">
+        <strong>Director:</strong> {{ item.artistName }}
+      </p>
+      <p v-if="item.trackTimeMillis" class="card-text">
+        <strong>Runtime:</strong> {{ item.trackTimeMillis }} minutes
+      </p>
+      <p v-if="item.longDescription" class="card-text">
+        <strong>Description:</strong> <span v-html="item.longDescription"></span>
+      </p>
+    </div>
   </div>
 </template>
 

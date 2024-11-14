@@ -7,18 +7,18 @@ export default class LibraryCollectionsFactory {
         
         items.forEach(item => {
             let newItem = false;
-            switch (item.kind?.toLowerCase() ?? '') {
+            switch (item.kind?.toLowerCase() || item.wrapperType.toLowerCase()) {
                 case "song":
                     newItem = new Song(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
                     break;
                 case "podcast":
-                    newItem = new Podcast(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
+                    newItem = new Podcast(item.collectionName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
                     break;
                 case "audiobook":
-                    newItem = new Audiobook(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
+                    newItem = new Audiobook(item.collectionName, item.artistName, item.artworkUrl60, item.description);
                     break;
-                case "movie":
-                    newItem = new Movie(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);
+                case "feature-movie":
+                    newItem = new Movie(item.collectionName, item.artistName, item.artworkUrl60, item.longDescription, item.trackTimeMillis);
                     break;
                 case "book":
                     newItem = new Book(item.trackName, item.artistName, item.artworkUrl60, item.primaryGenreName, item.trackTimeMillis);

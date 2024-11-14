@@ -9,34 +9,33 @@ class Book {
 
 class Movie {
     static type = 'Movie';
-    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
-        this.trackName = trackName ?? 'Unknown Song';
+    constructor(collectionName, artistName, artworkUrl60, longDescription, trackTimeMillis) {
+        this.collectionName = collectionName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
-        this.trackTimeMillis = trackTimeMillis ?? 0;
+        this.longDescription = longDescription ?? 'Unknown Description';
+        this.trackTimeMillis = (trackTimeMillis / 1000 / 60).toFixed(2) ?? 0;
     }
 }
 
 class Audiobook {
     static type = 'Audiobook';
-    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
-        this.trackName = trackName ?? 'Unknown Song';
+    constructor(collectionName, artistName, artworkUrl60, description) {
+        this.collectionName = collectionName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
-        this.trackTimeMillis = trackTimeMillis ?? 0;
+        this.description = description ?? 'Unknown Description';
     }
 }
 
 class Podcast {
     static type = 'Podcast';
-    constructor(trackName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
-        this.trackName = trackName ?? 'Unknown Song';
+    constructor(collectionName, artistName, artworkUrl60, primaryGenreName, trackTimeMillis) {
+        this.collectionName = collectionName ?? 'Unknown Song';
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
-        this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
-        this.trackTimeMillis = trackTimeMillis ?? 0;
+        this.primaryGenreName = primaryGenreName ?? '';
+        this.trackTimeMillis = (trackTimeMillis / 1000 / 60).toFixed(2) ?? 0;
     }
 }
 
@@ -47,7 +46,7 @@ class Song {
         this.artistName = artistName ?? 'Unknown Artist';
         this.artworkUrl60 = artworkUrl60 ?? '';
         this.primaryGenreName = primaryGenreName ?? 'Unknown Genre';
-        this.trackTimeMillis = trackTimeMillis ?? 0;
+        this.trackTimeMillis = (trackTimeMillis / 1000 / 60).toFixed(2) ?? 0;
     }
 }
 export { Book, Movie, Audiobook, Podcast, Song };

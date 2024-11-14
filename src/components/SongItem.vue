@@ -16,12 +16,12 @@ export default {
 
 <template>
 
-  <div class="card">
+  <div class="card" style="overflow-y: scroll; height: 600px;">
     <img v-if="item.artworkUrl60" :src="item.artworkUrl60" class="card-img-top" alt="Artwork" />
     <div class="card-body">
       <h5 class="card-title">{{ item.trackName }}</h5>
       <p v-if="item.trackTimeMillis" class="card-text">
-        <strong>Runtime:</strong> {{ item.trackTimeMillis }}
+        <strong>Runtime:</strong> {{ item.trackTimeMillis }} minutes
       </p>
       <p v-if="item.primaryGenreName" class="card-text">
         <strong>Genre:</strong> {{ item.primaryGenreName }}

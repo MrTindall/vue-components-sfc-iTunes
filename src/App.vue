@@ -24,7 +24,7 @@ export default {
         let url = "https://itunes.apple.com/search";
         let params = {
           term: this.searchQuery,
-          media: 'music',
+          media: 'all',
           limit: 20
         };
         
